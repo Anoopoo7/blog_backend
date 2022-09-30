@@ -1,5 +1,7 @@
 package lxiyas.example.backend.StaticContent.services;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,9 @@ public class StaticServices {
         }
         log.info("6222bb82-75da-4f49-9f40-9163e6d7a3ac", "saving static content for the page {}",
                 staticContent.getPageType(), staticContent);
+        staticContent.setCreatedDate(new Date());
+        staticContent.setUpdatedDate(new Date());
+        staticContent.setActive(true);
         staticContent = staicContentRepository.save(staticContent);
         return staticContent;
     }

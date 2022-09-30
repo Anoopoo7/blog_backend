@@ -1,5 +1,6 @@
 package lxiyas.example.backend.StaticContent.models;
 
+import java.util.Date;
 import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,8 +16,10 @@ public class StaticcontentView {
   @Id
   private String id;
   private String pageType;
-  private Map<String,Map<String, String>> content;
+  private Map<Object,Object> content;
   private boolean active;
+  private Date UpdatedDate;
+  private Date createdDate;
 }
 
 // {
