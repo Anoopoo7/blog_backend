@@ -23,4 +23,5 @@ public class InventoryView {
     private boolean active;
     private Date createdDate;
     private Date updatedDate;
+    private int defaultPrice;
 }

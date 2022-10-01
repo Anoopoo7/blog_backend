@@ -14,4 +14,5 @@ public class ProductRequestView {
     private boolean onSale;
     private Map<String, VarientView> varients;
     private boolean infinite;
+    private int defaultPrice;
 }

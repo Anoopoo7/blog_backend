@@ -44,6 +44,7 @@ public class ProductService {
         inventoryView.setVarients(productRequestView.getVarients());
         inventoryView.setInfinite(productRequestView.isInfinite());
         inventoryView.setActive(productRequestView.isActive());
+        inventoryView.setDefaultPrice(productRequestView.getDefaultPrice());
         inventoryView.setCreatedDate(new Date());
         inventoryView.setUpdatedDate(new Date());
         log.info("95ad9061-d2f9-4129-acf2-e26a4074e4ac", "saving inventory details {}", inventoryView);
