@@ -1,0 +1,1 @@
+mongod --dbpath "../../../data" --port 18401
