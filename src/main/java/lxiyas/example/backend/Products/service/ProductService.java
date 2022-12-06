@@ -87,4 +87,16 @@ public class ProductService {
         }).collect(Collectors.toList());
         return productDetails;
     }
+
+    public InventoryView getProductInventoryById(String id) throws Exception {
+        if (null == id) {
+            throw new Exception(ProductExceptions.INVALID_INPUT.name());
+        }
+        InventoryView inventoryView = inventoryRepository.findByProductIdAndActive(id, true);
+        log.info("be0b2756-151a-49d8-a937-4f6727e30c16", "fetched inventory {} of product: {}", inventoryView, id);
+        if (null == inventoryView) {
+            throw new Exception(ProductExceptions.NO_ACTIVE_INVENTORY_FOUND.name());
+        }
+        return inventoryView;
+    }
 }
