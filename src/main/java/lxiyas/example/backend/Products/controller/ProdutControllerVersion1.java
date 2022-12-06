@@ -28,10 +28,18 @@ public class ProdutControllerVersion1 {
                 new Response(true, productService.createProduct(productRequestView), "Product Saved Successfully"),
                 HttpStatus.OK);
     }
+
     @GetMapping("/url/{product}")
-    public ResponseEntity<Response> getProductByUrl(@PathVariable String product) throws Exception{
+    public ResponseEntity<Response> getProductByUrl(@PathVariable String product) throws Exception {
         return new ResponseEntity<>(
                 new Response(true, productService.getProductByUrl(product), "Product fetched Successfully"),
+                HttpStatus.OK);
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<Response> getProductInventoryById(@PathVariable String id) throws Exception {
+        return new ResponseEntity<>(
+                new Response(true, productService.getProductInventoryById(id), "Product inventory fetched Successfully"),
                 HttpStatus.OK);
     }
 }
