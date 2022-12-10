@@ -58,7 +58,7 @@ public class UserService {
         }
     }
 
-    private User getUserById(String userId) {
+    public User getUserById(String userId) {
         if (null == userId) {
             log.error("ff767d6c-f42d-4397-bb0e-a5afbea6ceae", "cannot find user {} becasuse of insufficient input",
                     userId);
@@ -93,7 +93,7 @@ public class UserService {
             throw new Exception(UserExceptions.INVALID_INPUT.name());
         }
         List<Address> addresses = addressRepository.findAllByUserId(id);
-        log.error("1697d612-8c9c-4cd4-be28-d4e078d3dce0", "fetched address {} to userId {}",
+        log.info("1697d612-8c9c-4cd4-be28-d4e078d3dce0", "fetched address {} to userId {}",
                 addresses, id);
         return addresses;
     }

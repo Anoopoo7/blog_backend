@@ -17,7 +17,7 @@ import lxiyas.example.backend.Users.models.User;
 import lxiyas.example.backend.Users.service.UserService;
 
 @RestController
-@RequestMapping("/users/api/v1")
+@RequestMapping("/api/v1/users")
 @CrossOrigin(origins = "*")
 public class UserControllerVersion1 {
 
