@@ -3,6 +3,7 @@ package lxiyas.example.backend.Products.service;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,5 +99,18 @@ public class ProductService {
             throw new Exception(ProductExceptions.NO_ACTIVE_INVENTORY_FOUND.name());
         }
         return inventoryView;
+    }
+
+    public ProductView getProductById(String id){
+        if (null == id) {
+            log.error("196600c4-807f-481b-8924-5f85b2805995", "cannot find product {} becasuse of insufficient input",
+                    id);
+        }
+        Optional<ProductView> product = productRepository.findById(id);
+        if (product.isEmpty()) {
+            log.error("054ff6cf-bcbd-4e51-8556-fd11fce05853", "couldnt find product");
+            return null;
+        }
+        return product.get();
     }
 }

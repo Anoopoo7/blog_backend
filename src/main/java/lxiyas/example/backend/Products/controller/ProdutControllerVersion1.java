@@ -16,7 +16,7 @@ import lxiyas.example.backend.Products.models.ProductRequestView;
 import lxiyas.example.backend.Products.service.ProductService;
 
 @RestController
-@RequestMapping("/product/api/v1")
+@RequestMapping("/api/v1/product")
 @CrossOrigin(origins = "*")
 public class ProdutControllerVersion1 {
     @Autowired

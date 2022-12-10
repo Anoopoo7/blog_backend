@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("static/api/v1")
+@RequestMapping("/api/v1/static")
 @CrossOrigin(origins = "*")
 public class StaticControllerVersion1 {
     @Autowired
